@@ -8,7 +8,6 @@ function makeIndex(rows,cols){
         index.innerText = (i + 1);
         container.appendChild(index).className = "grid-item-adv";
     }
-    console.log(cols);
 }
 function makeRows(rows, cols) {
     container.style.setProperty('--grid-cols', cols);
@@ -18,7 +17,15 @@ function makeRows(rows, cols) {
         container.appendChild(cell).className = "grid-item";
     };
 };
-
+window.onscroll = handleScroll;
+function handleScroll(){
+    var contentHeight = container.offsetHeight;
+    var yOffset = window.pageYOffset;
+    var y = yOffset + window.innerHeight;
+    if(y >= contentHeight){
+        container.innerHTML += "<div class='grid-item'></div>";
+    }
+};
 document.customForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const rows = this.rows.value;
