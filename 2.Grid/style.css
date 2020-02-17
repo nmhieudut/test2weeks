@@ -24,11 +24,3 @@
   background-color:yellow;
   color:black;
 }
-#header {
-  position :fixed;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-rows: repeat(var(--grid-rows), 1fr);
-  grid-template-columns: repeat(var(--grid-cols), 1fr);
-  margin-top:25px;
-} 

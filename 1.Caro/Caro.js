@@ -13,28 +13,20 @@ function checkWinner() {
     var box9 = document.querySelector("#box9");
     if (box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML && box2.innerHTML === box3.innerHTML)
     notice(box1, box2, box3);
-
-    if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML && box5.innerHTML === box6.innerHTML)
+    else if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML && box5.innerHTML === box6.innerHTML)
     notice(box4, box5, box6);
-
-    if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML && box8.innerHTML === box9.innerHTML)
+    else if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML && box8.innerHTML === box9.innerHTML)
     notice(box7, box8, box9);
-
-    if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML && box4.innerHTML === box7.innerHTML)
+    else if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML && box4.innerHTML === box7.innerHTML)
     notice(box1, box4, box7);
-
-    if (box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML && box5.innerHTML === box8.innerHTML)
+    else if (box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML && box5.innerHTML === box8.innerHTML)
     notice(box2, box5, box8);
-
-    if (box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML && box6.innerHTML === box9.innerHTML)
+    else if (box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML && box6.innerHTML === box9.innerHTML)
     notice(box3, box6, box9);
-
-    if (box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML && box5.innerHTML === box9.innerHTML)
+    else if (box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML && box5.innerHTML === box9.innerHTML)
     notice(box1, box5, box9);
-
-    if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML && box5.innerHTML === box7.innerHTML)
+    else if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML && box5.innerHTML === box7.innerHTML)
     notice(box3, box5, box7);
-
     // boxesArr = Array.from(boxes);
     // for (let i = 0; i < boxesArr.length; i++) {
     //     if (boxesArr[i].innerHTML == boxesArr[i + 1].innerHTML && boxesArr[i + 1].innerHTML == boxesArr[i + 2].innerHTML && boxesArr[i].innerHTML == boxes[i + 2].innerHTML)
@@ -44,8 +36,6 @@ function checkWinner() {
     //     else if (boxesArr[i].innerHTML == boxesArr[i + 4].innerHTML && boxesArr[i + 4].innerHTML == boxesArr[i + 8].innerHTML)
     //         console.log(`${boxesArr[i].innerHTML} wins`);
     // }
-
-
 }
 var toggle = 0;
 function addVal() {
@@ -66,6 +56,7 @@ function addVal() {
 }
 function notice(b1) {
     winNotice.innerHTML = `${b1.innerHTML} Wins`;
+    boxes.forEach(box => box.removeEventListener('click',addVal))
 }
 button.addEventListener('click',() => {
     window.location.reload();

@@ -37,7 +37,7 @@ var canvas, ctx;
         }
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "green";
+        ctx.fillStyle = "white";
         for (var i = 0; i < snakeTrail.length; i++) {
           ctx.fillRect(
             snakeTrail[i].x * tileSize,

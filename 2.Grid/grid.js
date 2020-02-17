@@ -1,13 +1,14 @@
 const container = document.getElementById("container");
 function makeIndex(rows,cols){
-    for(let i = 1;i<cols;i++)
+    for(let i = 0;i<cols;i++)
     {
         container.style.setProperty('--grid-rows', rows);
         container.style.setProperty('--grid-cols', cols);
         let index = document.createElement("div");
-        index.innerText = i;
+        index.innerText = (i + 1);
         container.appendChild(index).className = "grid-item-adv";
     }
+    console.log(cols);
 }
 function makeRows(rows, cols) {
     container.style.setProperty('--grid-cols', cols);
